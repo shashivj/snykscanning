@@ -30,6 +30,7 @@ Actions:
     Configuration:
       # Required - Steps are sequential instructions that run shell commands
       Steps:
+        - Run: export SNYK_TOKEN: ${Secrets.SNYK_TOKEN}
         - Run: npm install -g snyk
         - Run: npm install
         - Run: snyk test
