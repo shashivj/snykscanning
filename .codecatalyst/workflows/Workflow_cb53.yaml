@@ -34,6 +34,8 @@ Actions:
         - Run: npm install -g snyk
         - Run: npm install
         - Run: snyk test
+        - Run: snyk monitor
+        - Run: snyk test
         - Run: echo "Hello, World!"
         - Run: echo "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>" >> report.xml
         - Run: echo "<testsuite tests=\"1\" name=\"TestAgentJunit\" >" >> report.xml
