@@ -14,9 +14,4 @@ Actions:
     Configuration:
       WhoToGreet : 'TEST'
       HowToGreet : 'TEST'
-      SNYK_TOKEN: ${Secrets.SNYK_TOKEN}
-      Steps:
-	    - Run: npm install -g snyk # install snyk
-        - Run: npm install
-        - Run: snyk test
 
