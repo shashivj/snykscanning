@@ -1,6 +1,7 @@
 # snyk-action
 * Add a brief paragraph or two that summarizes the purpose and function of this repository.
 * You could add relevant links for the consumers of this repository.
+* Vulnerabilites scanning and Software Compostion Analysis with Snyk.
 
 ## Usage
 * Define the purpose of the repository if this is going to be a tool, utility, library or a service.
