@@ -1,24 +1,22 @@
-SchemaVersion: '1.0'
-Name: 'snyk-action'
-Version: '0.0.0'
-Description: 'This Action greets someone and records the time'
-Configuration:
-  WhoToGreet:
-    Description: 'Who are we greeting here'
-    Required: true
-    DisplayName: 'Who to greet'
-    Type: string
-  HowToGreet:
-    Description: 'How to greet the person'
-    Required: false
-    DisplayName: 'How to greet'
-    Type: string
-    Default: 'Hello there,'
-Inputs:
-  Sources:
-    Required: true
-Environment:
-  Required: false
-Runs:
-  Using: 'node16'
-  Main: 'dist/index.js'
+
+    SchemaVersion: '1.0'
+    Name: 'AWSCodeBuildAction Action'
+    Version: '0.0.0'
+    Description: 'This Action starts a build in CodeBuild'
+    Configuration:
+      AWSCodeBuildProject:
+        Description: 'Project name for AWS CodeBuild project'
+        Required: true
+        DisplayName: 'AWSCodeBuildProject'
+        Type: string
+      AWSRegion:
+        Description: 'AWS Region'
+        Required: false
+        DisplayName: 'AWSRegion'
+        Type: string
+    Environment:
+      Required: true
+    Runs:
+      Using: 'node16'
+      Main: 'dist/index.js'
+  
