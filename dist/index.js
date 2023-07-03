@@ -38,10 +38,10 @@ const project = __importStar(__nccwpck_require__(855));
 const space = __importStar(__nccwpck_require__(1006));
 try {
     // Get inputs from the action
-    const input_WhoToGreet = core.getInput('WhoToGreet'); // Who are we greeting here
-    console.log(input_WhoToGreet);
-    const input_HowToGreet = core.getInput('HowToGreet'); // How to greet the person
-    console.log(input_HowToGreet);
+    const input_AWSCodeBuildProject = core.getInput('AWSCodeBuildProject'); // Project name for AWS CodeBuild project
+    console.log(input_AWSCodeBuildProject);
+    const input_AWSRegion = core.getInput('AWSRegion'); // AWS Region
+    console.log(input_AWSRegion);
     // Interact with CodeCatalyst entities
     console.log(`Current CodeCatalyst space ${space.getSpace().name}`);
     console.log(`Current CodeCatalyst project ${project.getProject().name}`);
