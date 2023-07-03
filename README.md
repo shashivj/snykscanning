@@ -1,4 +1,4 @@
-# About the "snyk-action" action
+# About the "AWSCodeBuildAction" action
 <!--
 - Explain why your customers would use this action. 
 - What does it offer? 
@@ -7,7 +7,7 @@
 - Example content follows.
 --->
 
-The **snyk-action** action greets a person by name with a hello message.
+The **AWSCodeBuildAction** action greets a person by name with a hello message.
 
 
 ## Basic example
@@ -17,18 +17,18 @@ The **snyk-action** action greets a person by name with a hello message.
 - If the action relies on other actions, include the larger workflow YAML.  
 - Example content follows. -->
 
-The following example shows how to configure **snyk-action-CI-workflow**.
+The following example shows how to configure **AWSCodeBuildAction-CI-workflow**.
 
 > **Note**:  The example is for illustrative purposes, and will not work without additional configuration.
 
 
 ```
-Name: snyk-action-CI-workflow
+Name: AWSCodeBuildAction-CI-workflow
 SchemaVersion: 1.0
 ...
 Actions:      
-  snyk-action:
-    Identifier: apo/snyk-action@v1
+  AWSCodeBuildAction:
+    Identifier: apo/awscodebuildaction@v1
     Environment:
       Name: codecatalyst-environment
       Connections:
@@ -38,21 +38,21 @@ Actions:
       Sources:
         - WorkflowSource
     Configuration:
-      WhoToGreet : 'test' # Who are we greeting here
-      HowToGreet : 'test' # How to greet the person
+      AWSCodeBuildProject : 'test' # Project name for AWS CodeBuild project
+      AWSRegion : 'test' # AWS Region
 ```
 ---
 
 Configuration properties used in this example are described below.
 
 
-### snyk-action
+### AWSCodeBuildAction
 
-The friendly name for the **snyk-action** action, and is used as a label in logs when the action runs.
+The friendly name for the **AWSCodeBuildAction** action, and is used as a label in logs when the action runs.
 
 Required: Yes
 
-Default: snyk-action
+Default: AWSCodeBuildAction
 
 ---
 
@@ -62,7 +62,7 @@ Identifies the action.
 
 Required: Yes
 
-Default: apo/snyk-action@v1
+Default: apo/awscodebuildaction@v1
 
 ---
 
@@ -88,7 +88,7 @@ Default: none
 
 ### Environment.Connections.Role
 
-The name of the IAM role that the **snyk-action** action uses to access AWS resources. Make sure that the role includes:
+The name of the IAM role that the **AWSCodeBuildAction** action uses to access AWS resources. Make sure that the role includes:
 
 
 The following permissions policy:
@@ -177,11 +177,11 @@ Default: "Hello there,"
 
 ---
 
-## How the "snyk-action" action works
+## How the "AWSCodeBuildAction" action works
 <!-- An optional section where you can describe behind-the-scenes processing, or extra details. 
 Example content follows. -->
 
-The **snyk-action** action works as follows:
+The **AWSCodeBuildAction** action works as follows:
 
 - At runtime, the action logs a greeting line composed of a configured name and message.
 
@@ -193,8 +193,8 @@ For troubleshooting information, see [Troubleshooting problems with workflows](h
 ## Additional resources
 <!-- Add links to other places in your docs, as required. -->
 
-- [snyk-action definition reference](https://www.mycompany.com/docs/ACTIONNAME-action-yaml) - Describes all **snyk-action** action properties in detail.
+- [AWSCodeBuildAction definition reference](https://www.mycompany.com/docs/ACTIONNAME-action-yaml) - Describes all **AWSCodeBuildAction** action properties in detail.
 - [Workflow definition reference](https://www.mycompany.com/docs/ACTIONNAME-workflow-yaml) - Describes all available workflow definition file properties in detail.
-- [Tutorial](https://www.mycompany.com/docs/ACTIONNAME-action-tut) - Step-by-step instructions on getting the **snyk-action** action running in an example scenario.
+- [Tutorial](https://www.mycompany.com/docs/ACTIONNAME-action-tut) - Step-by-step instructions on getting the **AWSCodeBuildAction** action running in an example scenario.
 - [Provide feedback](www.mycompany.com/feedback) - Submit a ticket against this action.
 
