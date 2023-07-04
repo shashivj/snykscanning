@@ -1,21 +1,22 @@
 
     SchemaVersion: '1.0'
-    Name: 'AWSCodeBuildAction Action'
+    Name: 'Snyk-SCA'
     Version: '0.0.0'
-    Description: 'This Action starts a build in CodeBuild'
+    Description: 'This Action starts a Snyk vulnerabilities scan'
     Configuration:
-      AWSCodeBuildProject:
-        Description: 'Project name for AWS CodeBuild project'
-        Required: true
-        DisplayName: 'AWSCodeBuildProject'
-        Type: string
-      AWSRegion:
-        Description: 'AWS Region'
-        Required: false
-        DisplayName: 'AWSRegion'
-        Type: string
-    Environment:
-      Required: false
+      # Required - Steps are sequential instructions that run shell commands
+      Steps:
+        - Run: export SNYK_TOKEN=${Secrets.SNYK_TOKEN}
+        - Run: npm install -g snyk
+        - Run: npm install
+        - Run: snyk test
+        - Run: snyk monitor
+        - Run: snyk test
+        - Run: echo "Hello, World!"
+        - Run: echo "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>" >> snyk.xml
+        - Run: echo "<testsuite tests=\"1\" name=\"TestAgentJunit\" >" >> snyk.xml
+        - Run: echo "<testcase classname=\"TestAgentJunit\" name=\"Dummy
+            Test\"/></testsuite>" >> snyk.xml
     Runs:
       Using: 'node16'
       Main: 'dist/index.js'
