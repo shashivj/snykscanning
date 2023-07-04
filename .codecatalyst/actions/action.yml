@@ -15,7 +15,7 @@
         DisplayName: 'AWSRegion'
         Type: string
     Environment:
-      Required: true
+      Required: false
     Runs:
       Using: 'node16'
       Main: 'dist/index.js'
