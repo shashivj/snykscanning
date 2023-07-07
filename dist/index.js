@@ -38,14 +38,26 @@ const project = __importStar(__nccwpck_require__(855));
 const space = __importStar(__nccwpck_require__(1006));
 try {
     // Get inputs from the action
-    const input_AWSCodeBuildProject = core.getInput('AWSCodeBuildProject'); // Project name for AWS CodeBuild project
-    console.log(input_AWSCodeBuildProject);
+    const snykToken = core.getInput('SnykAuthToken'); //Snyk Token
+    console.log('Sny Token = ' + snykToken);
     const input_AWSRegion = core.getInput('AWSRegion'); // AWS Region
     console.log(input_AWSRegion);
     // Interact with CodeCatalyst entities
     console.log(`Current CodeCatalyst space ${space.getSpace().name}`);
     console.log(`Current CodeCatalyst project ${project.getProject().name}`);
     // Action Code start
+    const cmdOutput = core.command('export SNYK_TOKEN=snykToken');
+    console.log(cmdOutput);
+    const cmdOutput1 = core.command('npm install -g snyk');
+    console.log(cmdOutput1);
+    const cmdOutput2 = core.command('npm install');
+    console.log(cmdOutput2);
+    const cmdOutput3 = core.command('snyk test');
+    console.log(cmdOutput3);
+    const cmdOutput4 = core.command('snyk monitor');
+    console.log(cmdOutput4);
+    const cmdOutput5 = core.command('snyk test');
+    console.log(cmdOutput5);
     // Set outputs of the action
 }
 catch (error) {
