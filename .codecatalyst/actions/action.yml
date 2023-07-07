@@ -15,8 +15,6 @@
         Required: false
       Artifacts: 
         Required: false
-    Environmnet:
-      Required: false
     Runs:
       Using: 'node16'
       Main: 'dist/index.js'
