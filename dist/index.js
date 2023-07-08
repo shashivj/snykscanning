@@ -38,10 +38,8 @@ const project = __importStar(__nccwpck_require__(855));
 const space = __importStar(__nccwpck_require__(1006));
 try {
     // Get inputs from the action
-    const snykToken = core.getInput('SnykAuthToken'); //Snyk Token
-    console.log('Sny Token = ' + snykToken);
-    const input_AWSRegion = core.getInput('AWSRegion'); // AWS Region
-    console.log(input_AWSRegion);
+    const input_SnykAuthToken = core.getInput('SnykAuthToken'); // Find Auth Token from Snyk account
+    console.log(input_SnykAuthToken);
     // Interact with CodeCatalyst entities
     console.log(`Current CodeCatalyst space ${space.getSpace().name}`);
     console.log(`Current CodeCatalyst project ${project.getProject().name}`);

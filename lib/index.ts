@@ -8,29 +8,28 @@ import * as runSummaries from '@aws/codecatalyst-run-summaries';
 import * as space from '@aws/codecatalyst-space';
 
 try {
-  // Get inputs from the action
-   const input_SnykAuthToken = core.getInput('SnykAuthToken'); // Find Auth Token from Snyk account
- console.log(input_SnykAuthToken);
+    // Get inputs from the action
+    const input_SnykAuthToken = core.getInput('SnykAuthToken'); // Find Auth Token from Snyk account
+    console.log(input_SnykAuthToken);
 
+    // Interact with CodeCatalyst entities
+    console.log(`Current CodeCatalyst space ${space.getSpace().name}`);
+    console.log(`Current CodeCatalyst project ${project.getProject().name}`);
 
-  // Interact with CodeCatalyst entities
-  console.log(`Current CodeCatalyst space ${space.getSpace().name}`);
-  console.log(`Current CodeCatalyst project ${project.getProject().name}`);
-
-  // Action Code start
-  const cmdOutput = core.command('export SNYK_TOKEN=snykToken');
-  console.log(cmdOutput);
-  const cmdOutput1 = core.command('npm install -g snyk');
-  console.log(cmdOutput1);
-  const cmdOutput2 = core.command('npm install');
-  console.log(cmdOutput2);
-  const cmdOutput3 = core.command('snyk test');
-  console.log(cmdOutput3);
-  const cmdOutput4 = core.command('snyk monitor');
-  console.log(cmdOutput4);
-  const cmdOutput5 = core.command('snyk test');
-  console.log(cmdOutput5);
-  // Set outputs of the action
-} catch(error) {
-  core.setFailed(`Action Failed, reason: ${error}`);
+    // Action Code start
+    const cmdOutput = core.command('export SNYK_TOKEN=snykToken');
+    console.log(cmdOutput);
+    const cmdOutput1 = core.command('npm install -g snyk');
+    console.log(cmdOutput1);
+    const cmdOutput2 = core.command('npm install');
+    console.log(cmdOutput2);
+    const cmdOutput3 = core.command('snyk test');
+    console.log(cmdOutput3);
+    const cmdOutput4 = core.command('snyk monitor');
+    console.log(cmdOutput4);
+    const cmdOutput5 = core.command('snyk test');
+    console.log(cmdOutput5);
+    // Set outputs of the action
+} catch (error) {
+    core.setFailed(`Action Failed, reason: ${error}`);
 }
