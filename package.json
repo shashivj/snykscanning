@@ -1,7 +1,7 @@
 {
-  "name": "AWSCodeBuildAction Action",
+  "name": "Snyk SCA",
   "version": "1.0.0",
-  "description": "This Action starts a build in CodeBuild",
+  "description": "Find, prioritize, and fix security vulnerabilities in code with Snyk SCA",
   "main": "lib/index.js",
   "scripts": {
     "build": "tsc",
