@@ -12,5 +12,5 @@ Actions:
       Sources:
         - WorkflowSource
     Configuration:
-      SnykAuthToken : 'TEST'
+      SnykAuthToken : ${Secrets.SNYK_TOKEN}
 
