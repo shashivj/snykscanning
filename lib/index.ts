@@ -10,14 +10,16 @@ import * as space from '@aws/codecatalyst-space';
 try {
     // Get inputs from the action
     const input_SnykAuthToken = core.getInput('SnykAuthToken'); // Find Auth Token from Snyk account
-    console.log(input_SnykAuthToken);
+    console.log('snyk setup');
+    console.log('SnykAuthToken ', input_SnykAuthToken);
 
     // Interact with CodeCatalyst entities
     console.log(`Current CodeCatalyst space ${space.getSpace().name}`);
     console.log(`Current CodeCatalyst project ${project.getProject().name}`);
 
     // Action Code start
-    const cmdOutput = core.command('export SNYK_TOKEN=snykToken');
+    //const cmdOutput = core.command('export SNYK_TOKEN=snykToken');
+    const cmdOutput = core.command('export SNYK_TOKEN=a66123ed-c805-48df-998a-e8d92711407a');
     console.log(cmdOutput);
     const cmdOutput1 = core.command('npm install -g snyk');
     console.log(cmdOutput1);
