@@ -18,10 +18,11 @@ try {
     console.log(`Current CodeCatalyst project ${project.getProject().name}`);
 
     // Action Code start
-    //const cmdOutput = core.command('export SNYK_TOKEN=snykToken');
+    const cmdOutputOld = core.command('export SNYK_TOKEN=input_SnykAuthToken');
+    console.log('snyk env set0=', cmdOutputOld);
     const cmdOutput = core.command('export SNYK_TOKEN=', input_SnykAuthToken);
     const tokenEnv = core.command('echo $SNYK_TOKEN');
-    console.log('snyk env set=', tokenEnv);
+    console.log('snyk env set1=', tokenEnv);
     console.log(cmdOutput);
     const cmdOutput1 = core.command('npm install -g snyk');
     console.log('snyk installstart=');
