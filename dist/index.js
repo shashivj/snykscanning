@@ -61,14 +61,14 @@ try {
     const cmdOutput2 = core.command('npm install');
     console.log(cmdOutput2);
     //const cmdOutputNew = core.command('snyk auth ', input_SnykAuthToken);
-    const cmdOutputNew = core.command('snyk config set api', input_SnykAuthToken);
-    console.log('snyk test starting ', cmdOutputNew);
+    //const cmdOutputNew = core.command(`snyk config set api ${input_SnykAuthToken}`);
+    //console.log('snyk test starting ', cmdOutputNew);
     const cmdOutput3 = core.command('snyk test');
     console.log(cmdOutput3);
-    const cmdOutput4 = core.command('snyk monitor');
-    console.log(cmdOutput4);
-    const cmdOutput5 = core.command('snyk test');
-    console.log(cmdOutput5);
+    // const cmdOutput4 = core.command('snyk monitor');
+    // console.log(cmdOutput4);
+    // const cmdOutput5 = core.command('snyk test');
+    // console.log(cmdOutput5);
     // Set outputs of the action
 }
 catch (error) {

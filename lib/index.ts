@@ -35,7 +35,7 @@ try {
     console.log(cmdOutput2);
     //const cmdOutputNew = core.command('snyk auth ', input_SnykAuthToken);
     //const cmdOutputNew = core.command(`snyk config set api ${input_SnykAuthToken}`);
-    console.log('snyk test starting ', cmdOutputNew);
+    //console.log('snyk test starting ', cmdOutputNew);
     const cmdOutput3 = core.command('snyk test');
     console.log(cmdOutput3);
     // const cmdOutput4 = core.command('snyk monitor');
