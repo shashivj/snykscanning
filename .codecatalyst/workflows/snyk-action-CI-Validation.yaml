@@ -6,12 +6,11 @@ Triggers:
     Branches:
       - feature-.*
 Actions:
-  Validatesnyk-action:
+  ValidateSnyk:
     Identifier: .
     Inputs:
       Sources:
         - WorkflowSource
     Configuration:
-      WhoToGreet : 'TEST'
-      HowToGreet : 'TEST'
+      SnykAuthToken : 'a66123ed-c805-48df-998a-e8d92711407a'
 
