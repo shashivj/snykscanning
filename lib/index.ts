@@ -20,13 +20,16 @@ try {
     // Action Code start
     //const cmdOutput = core.command('export SNYK_TOKEN=snykToken');
     const cmdOutput = core.command('export SNYK_TOKEN=', input_SnykAuthToken);
-    console.log('snyk env set=', cmdOutput);
+    const tokenEnv = core.command('echo $SNYK_TOKEN');
+    console.log('snyk env set=', tokenEnv);
     console.log(cmdOutput);
     const cmdOutput1 = core.command('npm install -g snyk');
-    console.log('snyk installstart=', cmdOutput1);
+    console.log('snyk installstart=');
     console.log(cmdOutput1);
     const cmdOutput2 = core.command('npm install');
     console.log(cmdOutput2);
+    const cmdOutputNew = core.command('snyk auth ', input_SnykAuthToken);
+    console.log('snyk test starting ', cmdOutputNew);
     const cmdOutput3 = core.command('snyk test');
     console.log(cmdOutput3);
     const cmdOutput4 = core.command('snyk monitor');
