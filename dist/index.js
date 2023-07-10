@@ -49,6 +49,8 @@ try {
     console.log('snyk env set0=', cmdOutputOld);
     const tokenEnv1 = core.command('echo $SNYK_TOKEN');
     console.log('tokenEnv1 =', tokenEnv1);
+    const variable1 = core.getEnvironmentVariable('SNYK_TOKEN');
+    console.log('variable1 =', variable1);
     const cmdOutput = core.command('export SNYK_TOKEN=', input_SnykAuthToken);
     const tokenEnv = core.command('echo $SNYK_TOKEN');
     console.log('snyk env set1=', tokenEnv);
