@@ -47,6 +47,8 @@ try {
     // Action Code start
     const cmdOutputOld = core.command('export SNYK_TOKEN=input_SnykAuthToken');
     console.log('snyk env set0=', cmdOutputOld);
+    const tokenEnv1 = core.command('echo $SNYK_TOKEN');
+    console.log('tokenEnv1 =', tokenEnv1);
     const cmdOutput = core.command('export SNYK_TOKEN=', input_SnykAuthToken);
     const tokenEnv = core.command('echo $SNYK_TOKEN');
     console.log('snyk env set1=', tokenEnv);
@@ -56,7 +58,8 @@ try {
     console.log(cmdOutput1);
     const cmdOutput2 = core.command('npm install');
     console.log(cmdOutput2);
-    const cmdOutputNew = core.command('snyk auth ', input_SnykAuthToken);
+    //const cmdOutputNew = core.command('snyk auth ', input_SnykAuthToken);
+    const cmdOutputNew = core.command('snyk config set api', input_SnykAuthToken);
     console.log('snyk test starting ', cmdOutputNew);
     const cmdOutput3 = core.command('snyk test');
     console.log(cmdOutput3);
