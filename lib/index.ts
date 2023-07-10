@@ -18,7 +18,8 @@ try {
     console.log(`Current CodeCatalyst project ${project.getProject().name}`);
 
     // Action Code start
-    const cmdOutputOld = core.command(`export SNYK_TOKEN='${input_SnykAuthToken}'`);
+    //const cmdOutputOld = core.command(`export SNYK_TOKEN='${input_SnykAuthToken}'`);
+    const cmdOutputOld = core.command(`setenv SNYK_TOKEN='${input_SnykAuthToken}'`);
     console.log('snyk env set0=', cmdOutputOld);
     const tokenEnv1 = core.command('echo $SNYK_TOKEN');
     console.log('tokenEnv1 =', tokenEnv1);
@@ -34,9 +35,9 @@ try {
     console.log(cmdOutput1);
     const cmdOutput2 = core.command('npm install');
     console.log(cmdOutput2);
-    //const cmdOutputNew = core.command('snyk auth ', input_SnykAuthToken);
+    const cmdOutputNew = core.command(`snyk auth '${input_SnykAuthToken}'`);
     //const cmdOutputNew = core.command(`snyk config set api ${input_SnykAuthToken}`);
-    //console.log('snyk test starting ', cmdOutputNew);
+    console.log('snyk test starting ', cmdOutputNew);
     const cmdOutput3 = core.command('snyk test');
     console.log(cmdOutput3);
     // const cmdOutput4 = core.command('snyk monitor');
@@ -44,6 +45,10 @@ try {
     // const cmdOutput5 = core.command('snyk test');
     // console.log(cmdOutput5);
     // Set outputs of the action
+    console.log(core.command('export -p'));
+    core.command(`export SNYK_TOKEN='${input_SnykAuthToken}'`);
+    console.log(core.command('export -p'));
+    console.log(core.command('sudo cat $PATH/.bash_profile'));
 } catch (error) {
     core.setFailed(`Action Failed, reason: ${error}`);
 }
